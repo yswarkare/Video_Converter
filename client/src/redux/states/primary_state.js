@@ -5,6 +5,8 @@ const primaryState = {
     size: "",
     fileStatus: "select a file to upload",
     newFilename: "",
+    convertedFilename: "",
+    convertedFilePath: "",
     uploadingStatus: false,
     convertingStatus: false,
     uploadedStatus: false,

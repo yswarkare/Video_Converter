@@ -39,7 +39,8 @@ class Wrapper extends Component {
 
     onClickDownloadVideo = () => {
         let fileInfo = {
-            filename: this.props.state01.newFilename,
+            convertedFilename: this.props.state01.convertedFilename,
+            convertedFilePath: this.props.state01.convertedFilePath,
             size: this.props.state01.size
         }
         this.props.downloadVideo(fileInfo);
@@ -96,26 +97,30 @@ class Wrapper extends Component {
                             {
                                 this.props.state01.convertingStatus === true &&
                                 <Fragment>
-                                <span className="spinner-grow spinner-grow-sm" role="status" aria-hidden="true"></span>
-                                <span className="sr-only">Loading...</span>
+                                <span className="button-text">Converting  </span>
+                                <span className="spinner-grow spinner-grow-sm text-primary button-text" role="status" aria-hidden="true"></span>
+                                <span className="spinner-grow spinner-grow-sm text-primary button-text" role="status" aria-hidden="true"></span>
+                                <span className="spinner-grow spinner-grow-sm text-primary button-text" role="status" aria-hidden="true"></span>
                                 </Fragment>
                             }
                         </button>
                     </div>
-                    <div>
-                        {
-                            this.props.state01.convertedStatus === true &&
+                    {
+                        this.props.state01.convertedStatus === true &&
+                        <Fragment>
+                        <div>
                             <span>Video successfully converted you can download it now</span>
-                        }
-                    </div>
-                    <div className="form-items">
-                        <label className="form-sub-item-1">Download Converted Video</label>
-                        <button className="form-sub-item-2 w-50"
-                        onClick={()=>{this.onClickDownloadVideo()}}
-                        target="_blank" download>
-                            Download
-                        </button>
-                    </div>
+                        </div>
+                        <div className="form-items">
+                            <label className="form-sub-item-1">Download Converted Video</label>
+                            <button className="form-sub-item-2 w-50"
+                            onClick={()=>{this.onClickDownloadVideo()}}
+                            target="_blank" download>
+                                Download
+                            </button>
+                        </div>
+                        </Fragment>
+                    }
                 </div>
             </div>
         )

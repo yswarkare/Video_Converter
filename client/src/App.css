@@ -129,4 +129,5 @@ button.form-sub-item-2:hover {
 
 .button-text {
   background-color: inherit;
+  padding: 0.25rem 0.5rem;
 }

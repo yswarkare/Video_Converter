@@ -40,6 +40,8 @@ const primaryReducer = (state = primaryState, action) => {
 
         case Convert_Video:
             console.log(action.payload);
+            stateCopy.convertedFilename = action.payload.convertedFilename;
+            stateCopy.convertedFilePath = action.payload.convertedFilePath;
             console.log(stateCopy);
             return stateCopy;
 
